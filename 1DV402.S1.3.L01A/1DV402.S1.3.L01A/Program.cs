@@ -105,7 +105,7 @@ namespace _1DV402.S1._3.L01A
 
                TotalLon += AntalLoner[i];
 
-               LonerSorterat[i] = AntalLoner[i]; //kopiera arrayen AntalLoner till LonerSorterat.
+               LonerSorterat[i] = AntalLoner[i]; //kopiera arrayen AntalLoner till LonerSorterat
             }
 
             Array.Sort(LonerSorterat);
@@ -150,7 +150,7 @@ namespace _1DV402.S1._3.L01A
             for (int a = 1; a <= loner; a++) //Loopa igenom arrayen och läser upp den 
             {
 
-                Console.Write("{0,5}   ", AntalLoner[a - 1]);
+                Console.Write("{0,8}   ", AntalLoner[a - 1]);
                 
                 if (a == b1)
                 {
