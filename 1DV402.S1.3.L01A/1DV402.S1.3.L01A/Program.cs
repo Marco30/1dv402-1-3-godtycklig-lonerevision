@@ -120,19 +120,32 @@ namespace _1DV402.S1._3.L01A
 
             genomsnittslonen = TotalLon / loner;// ger genomsnittes lönen 
 
-            Lon = LonerSorterat.Count();// får fram hur många värden som finns i arrayen och ger siffran på antal till Lon variabeln 
+            Lon = LonerSorterat.Count();// får fram hur lång arrayen är och ger siffran till Lon variabeln 
 
             int s = LonerSorterat.Count() / 2;
 
             if (Lon % 2 == 0)
             {
-                MedianLon = (LonerSortera[s - 1] + LonerSortera[s]) / 2;
+                MedianLon = (LonerSorterat[s - 1] + LonerSorterat[s]) / 2;// medianen när det är jämna antal löner räknar vi ut genom att medelvärdet av de två mittersta lönerna beräknas 
             }
 
             else
             {
-                MedianLon = LonerSortera[s];
+                MedianLon = LonerSorterat[s];// Är det ett udda antal löner bestäms medianlönen av den mittersta lönen. 
             }
+
+            Console.WriteLine("--------------------------------");
+
+            Console.WriteLine("Medianlön:          {0:c0}", MedianLon);
+
+            Console.WriteLine("Medellön:           {0:c0}", genomsnittslonen);
+
+            Console.WriteLine("Lönespridning:      {0:c0}", lonespridningen);
+
+            Console.WriteLine("--------------------------------");
+
+            Console.WriteLine();
+
 
 
             for (int a = 0; a < loner; a++) //Loopa igenom arrayen och läser upp den 
