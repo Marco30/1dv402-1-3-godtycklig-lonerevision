@@ -102,8 +102,6 @@ namespace _1DV402.S1._3.L01A
             {
                 i1++;
                AntalLoner[i] = ReadInt(String.Format("Ange lön nummer {0}: ", i1 ));
-               
-               
 
                TotalLon += AntalLoner[i];
 
