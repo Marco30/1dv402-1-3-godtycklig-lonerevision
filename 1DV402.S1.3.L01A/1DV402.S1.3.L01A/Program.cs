@@ -18,27 +18,12 @@ namespace _1DV402.S1._3.L01A
             while(exit < 2)
             {
 
-                antalloner = ReadInt();// läser in metoden som har funktionen som låter än mata in antal löner man vill ha och kontrollerar att man matat in minst två personer.
+                antalloner = ReadInt();// anropar in metoden som har funktionen som låter än mata in antal löner man vill ha och kontrollerar att man matat in minst två personer.
 
                    Console.WriteLine(antalloner); 
                    Console.ReadKey();
 
-                   Console.WriteLine();//radbrytning
-                   Console.BackgroundColor = ConsoleColor.DarkGreen;//bakgrunds färg 
-                   Console.ForegroundColor = ConsoleColor.White;// färg på text 
-                   Console.WriteLine("Tryck på valfri tangent för att göra en ny beräkning - Escape avslutar programmet.");
-                   Console.ResetColor();
-
-                   ConsoleKeyInfo knap;
-                   knap = Console.ReadKey();
-
-                   Console.WriteLine();//radbrytning
-
-                if(knap.Key == ConsoleKey.Escape)
-                {
-                    exit = exit + 3;
-                }
-
+                   exit = Avsluta();//// anropar metoden som har funktionen som avlutar programmet 
                    
 
             }
@@ -84,6 +69,31 @@ namespace _1DV402.S1._3.L01A
 
             return ReadInt;
         }  
+
+        public static int Avsluta()
+        {
+
+            int exit = 0;
+            
+            Console.WriteLine();//radbrytning
+            Console.BackgroundColor = ConsoleColor.DarkGreen;//bakgrunds färg 
+            Console.ForegroundColor = ConsoleColor.White;// färg på text 
+            Console.WriteLine("Tryck på valfri tangent för att göra en ny beräkning - Escape avslutar programmet.");
+            Console.ResetColor();
+
+            ConsoleKeyInfo knap;
+            knap = Console.ReadKey();
+
+            Console.WriteLine();//radbrytning
+
+            if (knap.Key == ConsoleKey.Escape)
+            {
+                exit = exit + 3;
+               
+            }
+
+            return exit;
+        }
 
 
     }
