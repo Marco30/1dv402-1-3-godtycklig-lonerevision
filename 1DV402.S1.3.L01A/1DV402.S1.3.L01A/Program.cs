@@ -22,7 +22,7 @@ namespace _1DV402.S1._3.L01A
 
                 ProcessSalaries(antalloner);
 
-                   exit = Avsluta();// anropar metoden som har funktionen som avlutar programmet 
+                exit = Avsluta();// anropar metoden som har funktionen som avlutar programmet 
                    
 
             }
@@ -147,12 +147,23 @@ namespace _1DV402.S1._3.L01A
             Console.WriteLine();
 
 
+            int b1 = 3;
 
-            for (int a = 0; a < loner; a++) //Loopa igenom arrayen och läser upp den 
+            for (int a = 1; a <= loner; a++) //Loopa igenom arrayen och läser upp den 
             {
-                
-                Console.WriteLine("det är inte en siffra " + LonerSorterat[a]);
 
+                Console.Write("{0,5}   ", AntalLoner[a - 1]);
+                
+                if (a == b1)
+                {
+                    Console.WriteLine();
+                    b1 = b1 + 3;
+
+                }
+
+                
+
+               
                 
             }
 
