@@ -22,7 +22,7 @@ namespace _1DV402.S1._3.L01A
 
                 ProcessSalaries(antalloner);
 
-                   exit = Avsluta();//// anropar metoden som har funktionen som avlutar programmet 
+                   exit = Avsluta();// anropar metoden som har funktionen som avlutar programmet 
                    
 
             }
@@ -72,7 +72,7 @@ namespace _1DV402.S1._3.L01A
         static void ProcessSalaries(int loner)
         {
 
-            int ReknaLon;
+            int Lon;
 
             int TotalLon;
 
@@ -96,9 +96,14 @@ namespace _1DV402.S1._3.L01A
 
             LonerSorterat = new int[loner];
 
-            for (int i = 0; i < loner; i++) //Loopa igenom arrayen´för att läsa in och tilldela värde i AntalLoner.
+            int i1 = 0;
+
+            for (int i = 0; i < loner; i++) //Loopar igenom arrayen för att läsa in värde i AntalLoner.
             {
-               AntalLoner[i] = ReadInt(String.Format("Ange lön nummer {0}: ", i + 1));
+                i1++;
+               AntalLoner[i] = ReadInt(String.Format("Ange lön nummer {0}: ", i1 ));
+               
+               
 
                TotalLon += AntalLoner[i];
 
@@ -107,12 +112,28 @@ namespace _1DV402.S1._3.L01A
 
             Array.Sort(LonerSorterat);
 
-            HogstaLon = LonerSorterat.Max();
-            legstalonen = LonerSorterat.Min();
-            lonespridningen = HogstaLon - legstalonen;
-            genomsnittslonen = TotalLon / loner;
+            HogstaLon = LonerSorterat.Max(); 
 
-            ReknaLon = LonerSorterat.Count();
+            legstalonen = LonerSorterat.Min();
+
+            lonespridningen = HogstaLon - legstalonen;// ger lönespridningen 
+
+            genomsnittslonen = TotalLon / loner;// ger genomsnittes lönen 
+
+            Lon = LonerSorterat.Count();// får fram hur många värden som finns i arrayen och ger siffran på antal till Lon variabeln 
+
+            int s = LonerSorterat.Count() / 2;
+
+            if (Lon % 2 == 0)
+            {
+                MedianLon = (LonerSortera[s - 1] + LonerSortera[s]) / 2;
+            }
+
+            else
+            {
+                MedianLon = LonerSortera[s];
+            }
+
 
             for (int a = 0; a < loner; a++) //Loopa igenom arrayen och läser upp den 
             {
